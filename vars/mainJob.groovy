@@ -22,6 +22,7 @@ def call() {
 					sh 'docker push $REPOSITORY_URI'
 				}
 			}
+		}
 		post {
 			always {
 				sh 'docker logout'
