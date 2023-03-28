@@ -9,7 +9,7 @@ def call(String test) {
 		stages {
 			stage('Building image') {
 				steps {
-					sh 'echo ${test}'
+					sh 'echo $test'
 					sh 'docker build -t $REPOSITORY_URI .'
 				}
 			}
