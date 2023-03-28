@@ -1,4 +1,4 @@
-def call() {
+def call(String test) {
 	pipeline {
 		agent any
 		environment {
@@ -9,6 +9,7 @@ def call() {
 		stages {
 			stage('Building image') {
 				steps {
+					sh 'echo ${test}'
 					sh 'docker build -t $REPOSITORY_URI .'
 				}
 			}
